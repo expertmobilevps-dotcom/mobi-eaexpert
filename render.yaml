@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: mobi-ea-app
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: VITE_API_BASE_PATH
+        value: /api
+      - key: API_BASE_URL
+        value: https://mobieaexpert.com/admin/api
+      - key: LICENSE_PATH
+        value: /validate_license.php
+      - key: SIGNALS_PATH
+        value: /signals.php
+      - key: QUOTES_PATH
+        value: /quotes.php
+      - key: META_API_BASE_URL
+        value: https://mt5.mtapi.io
+      - key: META_API_KEY
+        value: ""
+      - key: IMAGE_PROXY_ALLOW_LIST
+        value: mobieaexpert.com
+      - key: NODE_ENV
+        value: production
